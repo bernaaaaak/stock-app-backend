@@ -22,33 +22,33 @@ module.exports = async function () {
         "username": "admin",
         "password": "aA?123456",
         "email": "admin@site.com",
-        "first_name": "admin",
-        "last_name": "admin",
-        "is_active": true,
-        "is_staff": true,
-        "is_superadmin": true
+        "firstName": "admin",
+        "lastName": "admin",
+        "isActive": true,
+        "isStaff": true,
+        "isAdmin": true
     })
     await User.create({
         "_id": "65343222b67e9681f937f002",
         "username": "staff",
         "password": "aA?123456",
         "email": "staff@site.com",
-        "first_name": "staff",
-        "last_name": "staff",
-        "is_active": true,
-        "is_staff": true,
-        "is_superadmin": false
+        "firstName": "staff",
+        "lastName": "staff",
+        "isActive": true,
+        "isStaff": true,
+        "isAdmin": false
     })
     await User.create({
         "_id": "65343222b67e9681f937f003",
         "username": "test",
         "password": "aA?123456",
         "email": "test@site.com",
-        "first_name": "test",
-        "last_name": "test",
-        "is_active": true,
-        "is_staff": false,
-        "is_superadmin": false
+        "firstName": "test",
+        "lastName": "test",
+        "isActive": true,
+        "isStaff": false,
+        "isAdmin": false
     })
 
     /* Brand *
@@ -203,36 +203,36 @@ module.exports = async function () {
     await Product.create({
         "_id": "65343222b67e9681f937f421",
         "name": "Tommy",
-        "category_id": "65343222b67e9681f937f203",
-        "brand_id": "65343222b67e9681f937f107",
+        "categoryId": "65343222b67e9681f937f203",
+        "brandId": "65343222b67e9681f937f107",
         "stock": 0
     })
     await Product.create({
         "_id": "65343222b67e9681f937f422",
         "name": "Link",
-        "category_id": "65343222b67e9681f937f202",
-        "brand_id": "65343222b67e9681f937f123",
+        "categoryId": "65343222b67e9681f937f202",
+        "brandId": "65343222b67e9681f937f123",
         "stock": 910
     })
     await Product.create({
         "_id": "65343222b67e9681f937f423",
         "name": "Cola Turka",
-        "category_id": "65343222b67e9681f937f202",
-        "brand_id": "65343222b67e9681f937f123",
+        "categoryId": "65343222b67e9681f937f202",
+        "brandId": "65343222b67e9681f937f123",
         "stock": 750
     })
     await Product.create({
         "_id": "65343222b67e9681f937f426",
         "name": "Rondo",
-        "category_id": "65343222b67e9681f937f201",
-        "brand_id": "65343222b67e9681f937f123",
+        "categoryId": "65343222b67e9681f937f201",
+        "brandId": "65343222b67e9681f937f123",
         "stock": 900
     })
     await Product.create({
         "_id": "65343222b67e9681f937f427",
         "name": "Iphone 14 Pro",
-        "category_id": "65343222b67e9681f937f204",
-        "brand_id": "65343222b67e9681f937f131",
+        "categoryId": "65343222b67e9681f937f204",
+        "brandId": "65343222b67e9681f937f131",
         "stock": 0
     })
 
@@ -243,7 +243,7 @@ module.exports = async function () {
         "_id": "65343222b67e9681f937f513",
         "user_id": "65343222b67e9681f937f001",
         "firm_id": "65343222b67e9681f937f304",
-        "brand_id": "65343222b67e9681f937f123",
+        "brandId": "65343222b67e9681f937f123",
         "product_id": "65343222b67e9681f937f422",
         "quantity": 1000,
         "price": 20
@@ -252,7 +252,7 @@ module.exports = async function () {
         "_id": "65343222b67e9681f937f514",
         "user_id": "65343222b67e9681f937f001",
         "firm_id": "65343222b67e9681f937f304",
-        "brand_id": "65343222b67e9681f937f123",
+        "brandId": "65343222b67e9681f937f123",
         "product_id": "65343222b67e9681f937f423",
         "quantity": 1000,
         "price": 30
@@ -261,7 +261,7 @@ module.exports = async function () {
         "_id": "65343222b67e9681f937f516",
         "user_id": "65343222b67e9681f937f001",
         "firm_id": "65343222b67e9681f937f304",
-        "brand_id": "65343222b67e9681f937f123",
+        "brandId": "65343222b67e9681f937f123",
         "product_id": "65343222b67e9681f937f426",
         "quantity": 1000,
         "price": 5
@@ -270,7 +270,7 @@ module.exports = async function () {
         "_id": "65343222b67e9681f937f519",
         "user_id": "65343222b67e9681f937f002",
         "firm_id": "65343222b67e9681f937f333",
-        "brand_id": "65343222b67e9681f937f104",
+        "brandId": "65343222b67e9681f937f104",
         "product_id": "65343222b67e9681f937f422",
         "quantity": 10,
         "price": 100
@@ -279,7 +279,7 @@ module.exports = async function () {
         "_id": "65343222b67e9681f937f520",
         "user_id": "65343222b67e9681f937f001",
         "firm_id": "65343222b67e9681f937f305",
-        "brand_id": "65343222b67e9681f937f131",
+        "brandId": "65343222b67e9681f937f131",
         "product_id": "65343222b67e9681f937f427",
         "quantity": 10,
         "price": 2500
@@ -291,7 +291,7 @@ module.exports = async function () {
     await Sale.create({
         "_id": "65343222b67e9681f937f614",
         "user_id": "65343222b67e9681f937f001",
-        "brand_id": "65343222b67e9681f937f123",
+        "brandId": "65343222b67e9681f937f123",
         "product_id": "65343222b67e9681f937f422",
         "quantity": 100,
         "price": 30
@@ -299,7 +299,7 @@ module.exports = async function () {
     await Sale.create({
         "_id": "65343222b67e9681f937f615",
         "user_id": "65343222b67e9681f937f001",
-        "brand_id": "65343222b67e9681f937f123",
+        "brandId": "65343222b67e9681f937f123",
         "product_id": "65343222b67e9681f937f423",
         "quantity": 250,
         "price": 40
@@ -307,7 +307,7 @@ module.exports = async function () {
     await Sale.create({
         "_id": "65343222b67e9681f937f617",
         "user_id": "65343222b67e9681f937f001",
-        "brand_id": "65343222b67e9681f937f123",
+        "brandId": "65343222b67e9681f937f123",
         "product_id": "65343222b67e9681f937f426",
         "quantity": 100,
         "price": 6
@@ -315,7 +315,7 @@ module.exports = async function () {
     await Sale.create({
         "_id": "65343222b67e9681f937f624",
         "user_id": "65343222b67e9681f937f001",
-        "brand_id": "65343222b67e9681f937f131",
+        "brandId": "65343222b67e9681f937f131",
         "product_id": "65343222b67e9681f937f427",
         "quantity": 10,
         "price": 3500

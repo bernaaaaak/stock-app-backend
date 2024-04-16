@@ -1186,7 +1186,7 @@
             }
           }
         },
-        "first_name": {
+        "firstName": {
           "type": "object",
           "properties": {
             "type": {
