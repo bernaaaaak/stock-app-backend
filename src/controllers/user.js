@@ -83,15 +83,36 @@ module.exports = {
 
     update: async (req, res) => {
         /*
-            #swagger.tags = ["Users"]
-            #swagger.summary = "Update User"
-        */
-
-        // Manage only self-record.
-        let filter = {}
-        if (!req.user.isAdmin) {
-            filter = { _id: req.user._id }
+    #swagger.tags = ["Users"]
+    #swagger.summary = "Update User"
+    #swagger.parameters['body'] = {
+        in: 'body',
+        required: true,
+        schema: {
+            "username": "test",
+            "password": "1234",
+            "email": "test@site.com",
+            "firstName": "test",
+            "lastName": "test",
         }
+    }
+*/
+
+        // Sadece kendi kaydını güncelleyebilir:
+        // const customFilters = req.user?.isAdmin ? { _id: req.params.id } : { _id: req.user._id }
+        const customFilters = req.user?.isAdmin ? { _id: req.params.id } : { _id: req.params._id } // differ of object and string 
+
+        // Yeni kayıtlarda admin/staff durumunu değiştiremez:
+        if (!req.user?.isAdmin) {
+            delete req.body.isStaff
+            delete req.body.isAdmin
+        }
+
+        // // Manage only self-record.
+        // let filter = {}
+        // if (!req.user.isAdmin) {
+        //     filter = { _id: req.user._id }
+        // }
 
         const data = await User.updateOne({ _id: req.params.id, ...filter }, req.body, { runValidators: true })
 
